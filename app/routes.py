@@ -1,9 +1,9 @@
 from fastapi import APIRouter, HTTPException, status, Depends
 from sqlalchemy.orm import Session
 
-from database import get_db
-import schemas
-import services
+from app.database import get_db
+import app.schemas as schemas
+import app.services as services
 
 graph_router = APIRouter()
 
@@ -14,8 +14,8 @@ graph_router = APIRouter()
 def create_graph(graph_in: schemas.GraphCreate, db: Session = Depends(get_db)):
     return services.create_graph(db, graph_in)
 
-@graph_
-router.get("/graph/{graph_id}", response_model=schemas.GraphDetail)
+
+@graph_router.get("/graph/{graph_id}", response_model=schemas.GraphDetail)
 def get_graph(graph_id: int, db: Session = Depends(get_db)):
     return services.get_graph_details(db, graph_id)
 

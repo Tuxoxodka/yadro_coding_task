@@ -1,8 +1,6 @@
 from typing import List, Dict
 from pydantic import BaseModel, Field, constr
 
-# ВХОД
-
 
 class NodeCreate(BaseModel):
     name: constr(strip_whitespace=True, min_length=1, max_length=255) = Field(..., example="A")

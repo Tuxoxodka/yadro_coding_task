@@ -3,9 +3,9 @@
 from sqlalchemy.orm import Session
 from fastapi import HTTPException, status
 
-import schemas
-from models import Graph, Node, Edge
-from schemas import GraphCreate, NodeCreate, EdgeCreate
+import app.schemas as schemas
+from app.models import Graph, Node, Edge
+from app.schemas import GraphCreate, NodeCreate, EdgeCreate
 
 from collections import defaultdict, deque
 
