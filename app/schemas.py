@@ -21,8 +21,9 @@ class NodeRead(BaseModel):
     id: int
     name: str
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 
 class EdgeRead(BaseModel):
@@ -30,8 +31,9 @@ class EdgeRead(BaseModel):
     from_node: str
     to_node: str
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 
 class GraphRead(BaseModel):
@@ -40,8 +42,9 @@ class GraphRead(BaseModel):
     nodes: List[NodeRead]
     edges: List[EdgeRead]
 
-    class Config:
-        orm_mode = True
+    model_config = {
+        "from_attributes": True
+    }
 
 
 GraphOut = GraphRead

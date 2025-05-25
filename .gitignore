@@ -1,1 +1,19 @@
-venv/.idea/ 
+# Python venv and compiled files
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# PyCharm project settings
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Test coverage and cache
+htmlcov/
+*.cover
+coverage.*
+.cache
