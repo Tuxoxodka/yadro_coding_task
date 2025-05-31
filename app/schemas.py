@@ -13,8 +13,8 @@ class EdgeCreate(BaseModel):
 
 class GraphCreate(BaseModel):
     name: constr(strip_whitespace=True, min_length=1, max_length=255) = Field(..., example="MyGraph")
-    nodes: List[NodeCreate]
-    edges: List[EdgeCreate]
+    nodes: List[NodeCreate] = Field(default_factory=list)
+    edges: List[EdgeCreate] = Field(default_factory=list)
 
 
 class NodeRead(BaseModel):

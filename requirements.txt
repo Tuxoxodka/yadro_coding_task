@@ -4,3 +4,7 @@ sqlalchemy>=2.0
 asyncpg
 pydantic
 psycopg2-binary
+pytest
+pytest-asyncio
+pytest-cov
+httpx
