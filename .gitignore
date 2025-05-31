@@ -17,3 +17,4 @@ htmlcov/
 *.cover
 coverage.*
 .cache
+.coverage

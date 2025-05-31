@@ -9,7 +9,6 @@ class Graph(Base):
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, unique=True, index=True)
 
-    # связи
     nodes = relationship("Node", back_populates="graph", cascade="all, delete-orphan")
     edges = relationship("Edge", back_populates="graph", cascade="all, delete-orphan")
 
@@ -21,7 +20,6 @@ class Node(Base):
     name = Column(String, index=True)
     graph_id = Column(Integer, ForeignKey("graphs.id"))
 
-    # связи
     graph = relationship("Graph", back_populates="nodes")
     outgoing = relationship(
         "Edge",
@@ -45,7 +43,6 @@ class Edge(Base):
     to_node_id   = Column(Integer, ForeignKey("nodes.id"), nullable=False)
     graph_id     = Column(Integer, ForeignKey("graphs.id"), nullable=False)
 
-    # связи
     from_node = relationship(
         "Node",
         back_populates="outgoing",

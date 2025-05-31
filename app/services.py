@@ -70,6 +70,7 @@ def create_graph(db: Session, graph_data: GraphCreate) -> Graph:
     db.add_all(edge_objs)
     db.commit()
     db.refresh(graph)
+    db.expire_all()
     return graph
 
 
